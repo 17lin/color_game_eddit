@@ -50,6 +50,8 @@ body {
 #brand {
 	font-weight: bold;
 	padding: 0 1rem;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size:large;
 }
 
 #about {
