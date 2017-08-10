@@ -31,7 +31,7 @@ function initModeButtons() {
             for (var j = 0; j < modeButtons.length; j++) {
                 modeButtons[j].classList.remove("selected");
             }
-            this.classList.add("selected");
+            this.classList.add("selected");//看你選了什麼，this就是什麼
             mode = this.textContent.toLowerCase();
             switch (mode) {
                 case 'easy':
@@ -68,11 +68,11 @@ function initCards() {
 }
 
 function end() {
-    countdownDisplay.textContent = '';
+    countdownDisplay.textContent = '';//倒數清空
     resetButton.style.opacity = 1;
     resetDisplay.textContent = "Play Again"
-    changeColors("#FFF");
-    body.style.backgroundColor = pickedColor;
+    changeColors("#FFF");//全部反白
+    body.style.backgroundColor = pickedColor;//背景改成該色彩
     gameOver = true;
 }
 
@@ -82,7 +82,7 @@ function reset() {
     if (mode === 'nightmare') {
         resetButton.style.opacity = 0;
         countdownDisplay.innerHTML = '&nbsp;&nbsp;' + '5';
-        countdownId = setInterval(countdown, 1000);
+        countdownId = setInterval(countdown, 1000);//每1秒執行countdown( )
     } else {
         countdownDisplay.textContent = '';
     }
@@ -143,7 +143,7 @@ function randomColor() {
     var g = Math.floor(Math.random() * 256);
     //pick a "blue" from  0 -255
     var b = Math.floor(Math.random() * 256);
-    return "rgb(" + r + ", " + g + ", " + b + ")";
+    return "rgb(" + r + ", " + g + ", " + b + ")"; //這個格式是給css用的
 }
 
 function countdown() {
@@ -154,8 +154,8 @@ function countdown() {
         messageDisplay.textContent = "Timeout!";
         end();
     } else {
-        body.style.backgroundColor = '#FFF';
-        blinkId = setInterval(blink, 50);
+        body.style.backgroundColor = '#FFF'; //先讓背景反白(閃)
+        blinkId = setInterval(blink, 50); //每0.05秒黑一下
     }
 }
 
